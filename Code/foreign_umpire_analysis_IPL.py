@@ -3,10 +3,11 @@
 # importing all the required libraries to deal with csv files and to plot the data.
 import csv
 from matplotlib import pyplot as plt
+import os
 
 # Creating the data of number of Umpires country wise, from scratch data.
 umpires = {}
-with open("IPL-Dataset-Analytics/Data/umpires.csv","r") as f:
+with open(os.getcwd()+"/../Data/umpires.csv","r") as f:
     reader = csv.reader(f)
     next(reader,None) # skipping the headers
     for row in reader:

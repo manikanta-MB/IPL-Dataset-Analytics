@@ -3,10 +3,11 @@
 # importing all the required libraries to deal with csv files and to plot the data.
 import csv
 from matplotlib import pyplot as plt
+import os
 
 # Creating the data of total runs scored by each bangalore batsman over IPL history, from scratch data.
 batsman_and_score={}
-with open("IPL-Dataset-Analytics/Data/deliveries.csv","r") as f:
+with open(os.getcwd()+"/../Data/deliveries.csv","r") as f:
     reader = csv.reader(f)
     next(reader,None) # skipping the headers
     for row in reader:

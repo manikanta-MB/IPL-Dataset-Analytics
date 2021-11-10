@@ -9,6 +9,7 @@ To solve this problem first i divided it into 3 modules.
 # importing the required libraries to deal with csv files and to plot the data.
 import csv
 from matplotlib import pyplot as plt
+import os
 
 # Creating the data of no.of matches played by each team in each season, from scratch data.
 def get_team_season_matches(filename):
@@ -68,6 +69,6 @@ def plot_the_data(teams_and_matches_seasonwise,seasons):
     plt.show()
 
 # Calling helper functions to extract the required data, to sort it based on season wise and to plot the result.
-team_season_matches,seasons = get_team_season_matches("IPL-Dataset-Analytics/Data/matches.csv")
+team_season_matches,seasons = get_team_season_matches(os.getcwd()+"/../Data/matches.csv")
 teams_and_matches_seasonwise = order_matches_seasonwise(team_season_matches,seasons)
 plot_the_data(teams_and_matches_seasonwise,seasons)
