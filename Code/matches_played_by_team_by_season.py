@@ -51,11 +51,15 @@ def plot_the_data(teams_and_matches_seasonwise,seasons):
     # Shrink current axis by 20%
     box = ax.get_position()
     ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    #Hardcoding the names of colors for each team
+    colors = ["fuchsia","maroon","red","yellow","blue","lime","purple","black","green","olive","teal","aqua","navy","grey"]
     # Creating the bar and Placing it to the right of previous team bar in each season.
+    j=0
     for team in teams_and_matches_seasonwise:
         current_team_matches = teams_and_matches_seasonwise[team]
-        ax.barh(seasons,current_team_matches,left=prev_list,label = team)
+        ax.barh(seasons,current_team_matches,left=prev_list,label = team,color=colors[j])
         prev_list = [prev_list[i]+current_team_matches[i] for i in range(no_seasons)]
+        j += 1
     plt.title("Number of matches played by each team Seasonwise",fontweight='bold',fontsize=20)
     plt.ylabel("Seasons",fontweight='bold',fontsize=15)
     plt.xlabel("number of matches played",fontweight='bold',fontsize=15)
