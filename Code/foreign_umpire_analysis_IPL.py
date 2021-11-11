@@ -2,17 +2,17 @@
 
 # importing all the required libraries to deal with csv files and to plot the data.
 import csv
-from matplotlib import pyplot as plt
 import os
+from matplotlib import pyplot as plt
 
 # Creating the data of number of Umpires country wise, from scratch data.
 umpires = {}
-with open(os.getcwd()+"/../Data/umpires.csv","r") as f:
+with open(os.getcwd()+"/../Data/umpires.csv","r",encoding="utf8") as f:
     reader = csv.reader(f)
     next(reader,None) # skipping the headers
     for row in reader:
         country = row[1].strip()
-        if(country != "India"):
+        if country != "India":
             umpires[country] = umpires.get(country,0) + 1
 
 # Creating X-axis and Y-axis values to define the bar chart

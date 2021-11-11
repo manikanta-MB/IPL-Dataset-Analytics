@@ -1,18 +1,21 @@
-""" This program shows the bar chart of total runs scored by each bangalore batsman over IPL history"""
+"""This program shows the bar chart of total runs scored by each bangalore batsman
+over IPL history
+"""
 
 # importing all the required libraries to deal with csv files and to plot the data.
 import csv
-from matplotlib import pyplot as plt
 import os
+from matplotlib import pyplot as plt
 
-# Creating the data of total runs scored by each bangalore batsman over IPL history, from scratch data.
+# Creating the data of total runs scored by each bangalore batsman
+# over IPL history, from scratch data.
 batsman_and_score={}
-with open(os.getcwd()+"/../Data/deliveries.csv","r") as f:
+with open(os.getcwd()+"/../Data/deliveries.csv","r",encoding="utf8") as f:
     reader = csv.reader(f)
     next(reader,None) # skipping the headers
     for row in reader:
         batting_team = row[2]
-        if(batting_team == "Royal Challengers Bangalore"):
+        if batting_team == "Royal Challengers Bangalore":
             batsman = row[6]
             score = int(row[15])
             batsman_and_score[batsman] = batsman_and_score.get(batsman,0) + score
