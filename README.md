@@ -8,7 +8,7 @@ The main aim of this project is to take some IPL data and convert that data into
   * Activate that virtual environment.
   * clone this repository.
   * Go to "IPL-Dataset-Analytics" directory.
-  * run this command `pip install requirements.txt`.
+  * run this command `pip install -r requirements.txt`.
   * above command installs all the required packages for this project.
 ## Problems
 There are 4 Problems in this project to deal with.<br />
